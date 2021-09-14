@@ -1,6 +1,6 @@
 NAME 		=	awful_phonebook
 CC			=	clang++
-CFLAGS		=	-Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra -std=c++98
 OBJ 		=	$(SRC:.cpp=.o)
 SRC 		=	main.cpp \
 				ClassContact.cpp \
