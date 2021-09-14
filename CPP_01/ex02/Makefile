@@ -1,4 +1,4 @@
-NAME 		=	zombie
+NAME 		=	brain
 CC			=	clang++
 CFLAGS		=	-Wall -Werror -Wextra -std=c++98
 OBJ 		=	$(SRC:.cpp=.o)

@@ -15,11 +15,7 @@ private:
 
 public:
 
-	HumanA(std::string name, Weapon& refWeapon): weapon(refWeapon)
-	{
-		this->name = name;
-	}
-
+	HumanA(std::string name, Weapon& refWeapon): weapon(refWeapon) { this->name = name;};
 	void		attack( void );
 
 };

@@ -4,6 +4,7 @@ CFLAGS		=	-Wall -Werror -Wextra -std=c++98
 OBJ 		=	$(SRC:.cpp=.o)
 SRC 		=	main.cpp
 
+FILES_REPLACE = files/*.replace
 RED			=	\033[0;31m
 GREEN		=	\033[0;32m
 WHITE		=	\033[0m
@@ -19,7 +20,7 @@ clean:
 	@printf "Object files ${RED}removed\n${WHITE}"
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(FILES_REPLACE)
 	@printf "[ $(NAME) ] ${RED}removed\n${WHITE}"
 
 re: fclean all

@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <string>
 
 int		handle_input(int ac, char **argv)
 {
@@ -11,7 +10,7 @@ int		handle_input(int ac, char **argv)
 	}
 	for (int i = 0; i < 4; i++)
 	{
-		if (!std::strlen(argv[i]))
+		if (!std::char_traits<char>::length(argv[i]))
 		{
 			std::cout << "Empty arguments" << std::endl;
 			return (-1);
@@ -25,7 +24,7 @@ int		main(int ac, char **argv)
 	if (handle_input(ac, argv))
 		return (-1);
 
-	for (size_t i = 0; i < strlen(argv[1]); i++)
+	for (size_t i = 0; i < std::char_traits<char>::length(argv[1]); i++)
 		argv[1][i] = toupper(argv[1][i]);
 	
 	std::string nameInputFile(argv[1]);
@@ -33,12 +32,19 @@ int		main(int ac, char **argv)
 	std::string nameReplaceFile = nameInputFile + replace;
 
 	std::ifstream inputFile(argv[1]);
-	std::ofstream outputFile(nameReplaceFile);
 
 	if (!inputFile.is_open())
+	{
 		std::cout << "Error: failed to open file" << std::endl;
+		return (-1);
+	}
+
+	std::ofstream outputFile(nameReplaceFile.data());
 	if (!outputFile.is_open())
+	{
 		std::cout << "Error: file could not be opened" << std::endl;
+		return (-1);
+	}
 
 	std::string str;
 	std::string s1 (argv[2]);

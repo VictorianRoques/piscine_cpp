@@ -10,4 +10,13 @@ int		main()
 	toto.complain("ERROR");
 	toto.complain("Invalid inputs");
 	toto.complain("");
+	
+	Karen Mireille;
+
+	Mireille.complain("ERROR");
+	Mireille.complain("INFO");
+	Mireille.complain("WARNING");
+	Mireille.complain("DEBUG");
+	Mireille.complain("BLABLA");
+
 }
