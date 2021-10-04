@@ -40,6 +40,7 @@ int		main(int ac, char **argv)
 	}
 
 	std::ofstream outputFile(nameReplaceFile.data());
+	
 	if (!outputFile.is_open())
 	{
 		std::cout << "Error: file could not be opened" << std::endl;

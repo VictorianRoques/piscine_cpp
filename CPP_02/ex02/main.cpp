@@ -37,17 +37,16 @@ if (a == b)
 if ( a != b)
 	std::cout <<  "a is != b" << std::endl;
 
-	std::cout <<"max a b " << Fixed::max(a, b) << std::endl;
-	std::cout <<"min a b " << Fixed::min(a, b) << std::endl;
-
-	Fixed d;
-	Fixed const c(Fixed(5.05f) * Fixed(2));
-	std::cout << d << std::endl;
-	std::cout << ++d << std::endl;
-	std::cout << d << std::endl;
-	std::cout << d++ << std::endl;
-	std::cout << d << std::endl;
-	std::cout << c << std::endl;
-	std::cout << Fixed::max(d, c) << std::endl;
+std::cout <<"max a b " << Fixed::max(a, b) << std::endl;
+std::cout <<"min a b " << Fixed::min(a, b) << std::endl;
+Fixed d;
+Fixed const c(Fixed(5.05f) * Fixed(2));
+std::cout << d << std::endl;
+std::cout << ++d << std::endl;
+std::cout << d << std::endl;
+std::cout << d++ << std::endl;
+std::cout << d << std::endl;
+std::cout << c << std::endl;
+std::cout << Fixed::max(d, c) << std::endl;
 	return 0;
 }
