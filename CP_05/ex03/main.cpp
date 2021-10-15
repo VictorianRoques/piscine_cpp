@@ -6,6 +6,19 @@
 
 int		main()
 {
+
+	try {
+		Intern Bernard;
+		Form * toto = Bernard.makeForm("invalid name", "bernard");
+		Bureaucrat JeanPierre("Jean Pierre", 30);
+		JeanPierre.signForm(*toto);
+
+		delete toto;
+	}
+	catch ( std::exception & e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	try {
 
 		Bureaucrat Belzebuth("Belzebuth", 132);
@@ -13,10 +26,6 @@ int		main()
 		Bureaucrat TheDevil("TheDevil" , 1);
 
 		Intern SomeGuy;
-
-		//invalid name
-		// Form *toto = SomeGuy.makeForm("invalid name", "belzebuth");
-		// Belzebuth.signForm(*toto);
 
 		Form *Shrubery = SomeGuy.makeForm("shruberry creation", "belzebuth");
 		Form *Roboto = SomeGuy.makeForm("robotomy request", "TheDevil");
@@ -48,4 +57,5 @@ int		main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+
 }

@@ -9,7 +9,10 @@ Intern::Intern()
 
 Intern::Intern(Intern const & src) {
 
-	*this = src;
+	for (int i = 0; i < 3; i++)
+	{
+		formCatalogue[i] = src.formCatalogue[i];
+	}
 }
 
 Intern &	Intern::operator=(Intern const & rhs) {
@@ -18,6 +21,7 @@ Intern &	Intern::operator=(Intern const & rhs) {
 	{
 		for (int i = 0; i < 3; i++)
 		{
+			delete formCatalogue[i];
 			formCatalogue[i] = rhs.formCatalogue[i];
 		}
 	}

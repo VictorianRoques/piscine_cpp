@@ -4,12 +4,13 @@ PresidentialPardonForm::PresidentialPardonForm(): Form("presidential pardon", 25
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target): Form("presidential pardon", 25, 5), _target(target) {}
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & src) { *this = src; }
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & src): Form(src) { _target = src._target; }
 
 PresidentialPardonForm &	PresidentialPardonForm::operator=(PresidentialPardonForm const & rhs) {
 
 	if (this != &rhs)
 	{
+		_target = rhs._target;
 		setSignedState(rhs.getSigned());
 	}
 	return *this;

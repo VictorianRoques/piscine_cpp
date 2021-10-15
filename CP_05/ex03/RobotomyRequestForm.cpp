@@ -4,12 +4,13 @@ RobotomyRequestForm::RobotomyRequestForm(): Form("robotomy request", 72, 137), _
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target):  Form("robotomy request", 72, 137), _target(target) {}
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src) { *this = src; }
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src): Form (src) { _target = src._target; }
 
 RobotomyRequestForm &	RobotomyRequestForm::operator=(RobotomyRequestForm const & rhs) {
 
 	if (this != &rhs)
 	{
+		_target = rhs._target;
 		setSignedState(rhs.getSigned());
 	}
 	return *this;

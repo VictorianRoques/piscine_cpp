@@ -63,6 +63,7 @@ void		Bureaucrat::executeForm(Form const & form) {
 
 	try {
 		form.execute(*this);
+		std::cout << *this << " executs " << form << std::endl;
 	}
 	catch (std::exception & e)
 	{
